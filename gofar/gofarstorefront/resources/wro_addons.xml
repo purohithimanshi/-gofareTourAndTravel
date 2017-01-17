@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<groups xmlns="http://www.isdc.ro/wro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.isdc.ro/wro wro.xsd">
+   <group name="addons_responsive">
+      <js>/_ui/addons/stocknotificationaddon/responsive/common/js/stocknotificationaddon.js</js>
+      <css>/_ui/addons/stocknotificationaddon/responsive/common/css/stocknotificationaddon.css</css>
+      <js>/_ui/addons/customerinterestsaddon/responsive/common/js/customerinterestsaddon.js</js>
+      <css>/_ui/addons/customerinterestsaddon/responsive/common/css/customerinterestsaddon.css</css>
+      <js>/_ui/addons/notificationaddon/responsive/common/js/notificationaddon.js</js>
+      <css>/_ui/addons/notificationaddon/responsive/common/css/notificationaddon.css</css>
+      <js>/_ui/addons/consignmenttrackingaddon/responsive/common/js/consignmenttrackingaddon.js</js>
+      <css>/_ui/addons/consignmenttrackingaddon/responsive/common/css/consignmenttrackingaddon.css</css>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/responsive/common/js/smarteditaddon.js</js>
+      <css>/_ui/addons/smarteditaddon/responsive/common/css/smarteditaddon.css</css>
+      <js>/_ui/addons/textfieldconfiguratortemplateaddon/responsive/common/js/textfieldconfiguratortemplateaddon.js</js>
+      <css>/_ui/addons/textfieldconfiguratortemplateaddon/responsive/common/css/textfieldconfiguratortemplateaddon.css</css>
+      <js>/_ui/addons/privacyoverlayeraddon/responsive/common/js/privacyoverlayeraddon.js</js>
+      <js>/_ui/addons/privacyoverlayeraddon/shared/common/js/jquery.cookiebar.js</js>
+      <css>/_ui/addons/privacyoverlayeraddon/responsive/common/css/privacyoverlayeraddon.css</css>
+      <js>/_ui/addons/hybrisanalyticsaddon/responsive/common/js/hybrisanalyticsaddon.js</js>
+      <js>/_ui/addons/hybrisanalyticsaddon/shared/common/js/piwik-min.js</js>
+      <css>/_ui/addons/hybrisanalyticsaddon/responsive/common/css/hybrisanalyticsaddon.css</css>
+      <js>/_ui/addons/customerticketingaddon/responsive/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/responsive/common/css/customerticketingaddon.css</css>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/assistedservicestorefront.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.pager.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.min.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/Chart.min.js</js>
+      <css>/_ui/addons/assistedservicestorefront/responsive/common/css/assistedservicestorefront.css</css>
+      <js>/_ui/addons/orderselfserviceaddon/responsive/common/js/orderselfserviceaddon.js</js>
+      <css>/_ui/addons/orderselfserviceaddon/responsive/common/css/orderselfserviceaddon.css</css>
+      <css>/_ui/addons/liveeditaddon/responsive/common/css/liveeditaddon.css</css>
+      <js>/_ui/addons/captchaaddon/responsive/common/js/captchaaddon.js</js>
+   </group>
+   <group name="addons_desktop">
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/desktop/common/js/smarteditaddon.js</js>
+      <css>/_ui/addons/smarteditaddon/desktop/common/css/smarteditaddon.css</css>
+      <js>/_ui/addons/privacyoverlayeraddon/responsive/common/js/privacyoverlayeraddon.js</js>
+      <js>/_ui/addons/privacyoverlayeraddon/shared/common/js/jquery.cookiebar.js</js>
+      <css>/_ui/addons/privacyoverlayeraddon/responsive/common/css/privacyoverlayeraddon.css</css>
+      <js>/_ui/addons/hybrisanalyticsaddon/desktop/common/js/hybrisanalyticsaddon.js</js>
+      <js>/_ui/addons/hybrisanalyticsaddon/shared/common/js/piwik-min.js</js>
+      <css>/_ui/addons/hybrisanalyticsaddon/desktop/common/css/hybrisanalyticsaddon.css</css>
+      <js>/_ui/addons/eventtrackingwsaddon/desktop/common/js/eventtrackingwsaddon.js</js>
+      <css>/_ui/addons/eventtrackingwsaddon/desktop/common/css/eventtrackingwsaddon.css</css>
+      <js>/_ui/addons/customerticketingaddon/desktop/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/desktop/common/css/customerticketingaddon.css</css>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/assistedservicestorefront.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.pager.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.min.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/Chart.min.js</js>
+      <css>/_ui/addons/assistedservicestorefront/responsive/common/css/assistedservicestorefront.css</css>
+      <css>/_ui/addons/liveeditaddon/desktop/common/css/liveeditaddon.css</css>
+      <js>/_ui/addons/captchaaddon/desktop/common/js/captchaaddon.js</js>
+      <css>/_ui/addons/captchaaddon/desktop/common/css/captchaaddon.css</css>
+   </group>
+   <group name="addons_mobile">
+      <js>/_ui/addons/smarteditaddon/shared/common/js/webApplicationInjector.js</js>
+      <js>/_ui/addons/smarteditaddon/shared/common/js/reprocessPage.js</js>
+      <js>/_ui/addons/smarteditaddon/mobile/common/js/smarteditaddon.js</js>
+      <css>/_ui/addons/smarteditaddon/mobile/common/css/smarteditaddon.css</css>
+      <js>/_ui/addons/privacyoverlayeraddon/responsive/common/js/privacyoverlayeraddon.js</js>
+      <js>/_ui/addons/privacyoverlayeraddon/shared/common/js/jquery.cookiebar.js</js>
+      <css>/_ui/addons/privacyoverlayeraddon/responsive/common/css/privacyoverlayeraddon.css</css>
+      <js>/_ui/addons/hybrisanalyticsaddon/mobile/common/js/hybrisanalyticsaddon.js</js>
+      <js>/_ui/addons/hybrisanalyticsaddon/shared/common/js/piwik-min.js</js>
+      <css>/_ui/addons/hybrisanalyticsaddon/mobile/common/css/hybrisanalyticsaddon.css</css>
+      <js>/_ui/addons/eventtrackingwsaddon/desktop/common/js/eventtrackingwsaddon.js</js>
+      <css>/_ui/addons/eventtrackingwsaddon/mobile/common/css/eventtrackingwsaddon.css</css>
+      <js>/_ui/addons/customerticketingaddon/desktop/common/js/customerticketingaddon.js</js>
+      <css>/_ui/addons/customerticketingaddon/mobile/common/css/customerticketingaddon.css</css>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/assistedservicestorefront.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.pager.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/jquery.tablesorter.min.js</js>
+      <js>/_ui/addons/assistedservicestorefront/responsive/common/js/Chart.min.js</js>
+      <css>/_ui/addons/assistedservicestorefront/responsive/common/css/assistedservicestorefront.css</css>
+      <css>/_ui/addons/liveeditaddon/mobile/common/css/liveeditaddon.css</css>
+      <js>/_ui/addons/captchaaddon/mobile/common/js/captchaaddon.js</js>
+      <css>/_ui/addons/captchaaddon/mobile/common/css/captchaaddon.css</css>
+   </group>
+</groups>
+
