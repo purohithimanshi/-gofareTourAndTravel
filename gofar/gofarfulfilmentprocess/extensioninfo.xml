@@ -17,7 +17,7 @@
 		<requires-extension name="acceleratorservices"/>
 		<requires-extension name="ticketsystem"/>
 
-		<coremodule generated="true" manager="com.gofer.travelogix.fulfilmentprocess.jalo.GofarFulfilmentProcessManager" packageroot="com.gofer.travelogix.fulfilmentprocess"/>
+		<coremodule generated="true" manager="com.gofar.tourtravel.fulfilmentprocess.jalo.GofarFulfilmentProcessManager" packageroot="com.gofar.tourtravel.fulfilmentprocess"/>
 
 		<meta key="extgen-template-extension" value="true"/>
 		

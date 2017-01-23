@@ -12,9 +12,9 @@
 #
 # Import the Solr configuration for the store
 #
-$productCatalog=__PRODUCT_CATALOG_NAME__
+$productCatalog=gofarProductCatalog
 $catalogVersions=catalogVersions(catalog(id),version);
-$serverConfigName=
+$serverConfigName=gofarSolrServerConfig
 $indexConfigName=
 $searchConfigName=
 $facetSearchConfigName=
@@ -32,9 +32,14 @@ $indexCurrencies=JPY,USD
 
 # Create the solr server configuration
 INSERT_UPDATE SolrServerConfig;name[unique=true];mode(code)
+;$serverConfigName;standalone
+
+INSERT_UPDATE SolrEndpointUrl;solrServerConfig(name)[unique=true];url[unique=true];master[unique=true,default=false]
+;$serverConfigName;http://localhost:8983/solr;true
 
 # Create the solr indexer configuration
 INSERT_UPDATE SolrIndexConfig;name[unique=true];batchSize;numberOfThreads;indexMode(code);
+
 
 # Create the faceted search configuration
 INSERT_UPDATE SolrSearchConfig;description[unique=true];pageSize

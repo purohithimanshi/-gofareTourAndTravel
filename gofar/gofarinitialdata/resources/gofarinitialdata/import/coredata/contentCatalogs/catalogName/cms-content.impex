@@ -12,8 +12,9 @@
 #
 # Import the CMS content for the site
 #
-$contentCatalog=__CONTENT_CATALOG_NAME__
+$contentCatalog=gofarContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+
 
 # Import config properties into impex macros
 UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]

@@ -24,21 +24,21 @@
 
 	<!-- Listeners -->
 	
-	<bean id="pickupConfirmationEventListener" class="com.gofer.travelogix.fulfilmentprocess.listeners.PickupConfirmationEventListener" parent="abstractEventListener">
+	<bean id="pickupConfirmationEventListener" class="com.gofar.tourtravel.fulfilmentprocess.listeners.PickupConfirmationEventListener" parent="abstractEventListener">
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	
 	<!-- Process Adapters -->
 
 	<alias name="mockProcess2WarehouseAdapter" alias="process2WarehouseAdapter"/>
-	<bean id="mockProcess2WarehouseAdapter" class="com.gofer.travelogix.fulfilmentprocess.warehouse.MockProcess2WarehouseAdapter" >
+	<bean id="mockProcess2WarehouseAdapter" class="com.gofar.tourtravel.fulfilmentprocess.warehouse.MockProcess2WarehouseAdapter" >
 		<property name="modelService" ref="modelService"/>
 		<property name="warehouse2ProcessAdapter" ref="warehouse2ProcessAdapter"/>
 		<property name="timeService" ref="timeService"/>
 	</bean>
 
 	<alias name="defaultWarehouse2ProcessAdapter" alias="warehouse2ProcessAdapter"/>
-	<bean id="defaultWarehouse2ProcessAdapter" class="com.gofer.travelogix.fulfilmentprocess.warehouse.DefaultWarehouse2ProcessAdapter" >
+	<bean id="defaultWarehouse2ProcessAdapter" class="com.gofar.tourtravel.fulfilmentprocess.warehouse.DefaultWarehouse2ProcessAdapter" >
 		<property name="modelService" ref="modelService"/>
 		<property name="statusMap">
 			<map key-type="de.hybris.platform.warehouse.WarehouseConsignmentStatus" value-type="de.hybris.platform.commerceservices.enums.WarehouseConsignmentState">
@@ -74,7 +74,7 @@
 	<!-- Performs some basic validation for the order as part of the first stage of the process. -->
 
 	<alias name="defaultCheckOrderService" alias="checkOrderService"/>
-	<bean id="defaultCheckOrderService" class="com.gofer.travelogix.fulfilmentprocess.impl.DefaultCheckOrderService" />
+	<bean id="defaultCheckOrderService" class="com.gofar.tourtravel.fulfilmentprocess.impl.DefaultCheckOrderService" />
 	
 	<!-- Order Splitting -->
 	<alias name="gofarfulfilmentprocessOrderSplittingService" alias="orderSplittingService"/>
@@ -94,27 +94,27 @@
 	<!-- Split Strategies -->
 	
 	<alias name="defaultSplitByPoS" alias="splitByPoS"/>
-	<bean id="defaultSplitByPoS" class="com.gofer.travelogix.fulfilmentprocess.strategy.impl.SplitByPoS" />
+	<bean id="defaultSplitByPoS" class="com.gofar.tourtravel.fulfilmentprocess.strategy.impl.SplitByPoS" />
 	
 	<alias name="defaultSplitByEntryDeliveryAddress" alias="splitByEntryDeliveryAddress"/>
-	<bean id="defaultSplitByEntryDeliveryAddress" class="com.gofer.travelogix.fulfilmentprocess.strategy.impl.SplitByEntryDeliveryAddress"  />
+	<bean id="defaultSplitByEntryDeliveryAddress" class="com.gofar.tourtravel.fulfilmentprocess.strategy.impl.SplitByEntryDeliveryAddress"  />
 	
 	<alias name="defaultSplitByDeliveryMode" alias="splitByDeliveryMode"/>
-	<bean id="defaultSplitByDeliveryMode" class="com.gofer.travelogix.fulfilmentprocess.strategy.impl.SplitByDeliveryMode" >
+	<bean id="defaultSplitByDeliveryMode" class="com.gofar.tourtravel.fulfilmentprocess.strategy.impl.SplitByDeliveryMode" >
 		<property name="pickupDeliveryModeDao" ref="pickupDeliveryModeDao"/>
 	</bean>
 	
 	<alias name="defaultSplitByAvailableCount" alias="splitByAvailableCount"/>
-	<bean id="defaultSplitByAvailableCount" class="com.gofer.travelogix.fulfilmentprocess.strategy.impl.SplitByAvailableCount" >
+	<bean id="defaultSplitByAvailableCount" class="com.gofar.tourtravel.fulfilmentprocess.strategy.impl.SplitByAvailableCount" >
 		<property name="commerceStockService" ref="commerceStockService"/>
 	</bean>
 	
 	<alias name="defaultSplitByWarehouse" alias="splitByWarehouse"/>
-	<bean id="defaultSplitByWarehouse" class="com.gofer.travelogix.fulfilmentprocess.strategy.impl.SplitByWarehouse" />
+	<bean id="defaultSplitByWarehouse" class="com.gofar.tourtravel.fulfilmentprocess.strategy.impl.SplitByWarehouse" />
 	
 	<!--  Jobs -->
 	
-	<bean id="cleanUpFraudOrderJob" class="com.gofer.travelogix.fulfilmentprocess.jobs.CleanUpFraudOrderJob"  >
+	<bean id="cleanUpFraudOrderJob" class="com.gofar.tourtravel.fulfilmentprocess.jobs.CleanUpFraudOrderJob"  >
 		<property name="modelService" ref="modelService"/>
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>

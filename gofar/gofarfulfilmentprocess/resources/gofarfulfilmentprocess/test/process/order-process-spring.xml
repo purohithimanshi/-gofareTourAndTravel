@@ -22,24 +22,24 @@
            
     <context:annotation-config/> 
 
-	<bean id="test.checkOrderAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.CheckOrder"  parent="abstractAction"/>
-	<bean id="test.cancelWholeOrderAuthorizationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.CancelWholeOrderAuthorization"  parent="abstractAction"/>
-	<bean id="test.sendOrderPlacedNotificationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SendOrderPlacedNotification"  parent="abstractAction"/>
-	<bean id="test.takePaymentAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.TakePayment"  parent="abstractAction"/>
-	<bean id="test.sendPaymentFailedNotificationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SendPaymentFailedNotification"  parent="abstractAction"/>
-	<bean id="test.checkTransactionReviewStatusAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.CheckTransactionReviewStatus"  parent="abstractAction"/>
-	<bean id="test.fraudCheckOrderAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.FraudCheckOrder"  parent="abstractAction"/>
-	<bean id="test.prepareOrderForManualCheckAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.PrepareOrderForManualCheck"  parent="abstractAction"/>
-	<bean id="test.sendFraudErrorNotificationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SendFraudErrorNotification"  parent="abstractAction"/>
-	<bean id="test.checkAuthorizeOrderPaymentAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.CheckAuthorizeOrderPayment"  parent="abstractAction"/>
-	<bean id="test.sendAuthorizationFailedNotificationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SendAuthorizationFailedNotification"  parent="abstractAction"/>
-	<bean id="test.reserveOrderAmountAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.ReserveOrderAmount"  parent="abstractAction"/>
-	<bean id="test.fraudCheckOrderInternalAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.FraudCheckOrderInternal"  parent="abstractAction"/>
-	<bean id="test.orderManualCheckedAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.OrderManualChecked"  parent="abstractAction"/>
-	<bean id="test.splitOrderAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SplitOrder"  parent="abstractAction"/>
-	<bean id="test.subprocessesCompletedAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SubprocessesCompleted"  parent="abstractAction"/>
-	<bean id="test.sendOrderCompletedNotificationAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.SendOrderCompletedNotification"  parent="abstractAction"/>
-	<bean id="test.scheduleForCleanUpAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.ScheduleForCleanUp"  parent="abstractAction"/>
-	<bean id="test.notifyCustomerAboutFraudAction" class="com.gofer.travelogix.fulfilmentprocess.test.actions.NotifyCustomerAboutFraud"  parent="abstractAction"/>
+	<bean id="test.checkOrderAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.CheckOrder"  parent="abstractAction"/>
+	<bean id="test.cancelWholeOrderAuthorizationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.CancelWholeOrderAuthorization"  parent="abstractAction"/>
+	<bean id="test.sendOrderPlacedNotificationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SendOrderPlacedNotification"  parent="abstractAction"/>
+	<bean id="test.takePaymentAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.TakePayment"  parent="abstractAction"/>
+	<bean id="test.sendPaymentFailedNotificationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SendPaymentFailedNotification"  parent="abstractAction"/>
+	<bean id="test.checkTransactionReviewStatusAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.CheckTransactionReviewStatus"  parent="abstractAction"/>
+	<bean id="test.fraudCheckOrderAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.FraudCheckOrder"  parent="abstractAction"/>
+	<bean id="test.prepareOrderForManualCheckAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.PrepareOrderForManualCheck"  parent="abstractAction"/>
+	<bean id="test.sendFraudErrorNotificationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SendFraudErrorNotification"  parent="abstractAction"/>
+	<bean id="test.checkAuthorizeOrderPaymentAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.CheckAuthorizeOrderPayment"  parent="abstractAction"/>
+	<bean id="test.sendAuthorizationFailedNotificationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SendAuthorizationFailedNotification"  parent="abstractAction"/>
+	<bean id="test.reserveOrderAmountAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.ReserveOrderAmount"  parent="abstractAction"/>
+	<bean id="test.fraudCheckOrderInternalAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.FraudCheckOrderInternal"  parent="abstractAction"/>
+	<bean id="test.orderManualCheckedAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.OrderManualChecked"  parent="abstractAction"/>
+	<bean id="test.splitOrderAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SplitOrder"  parent="abstractAction"/>
+	<bean id="test.subprocessesCompletedAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SubprocessesCompleted"  parent="abstractAction"/>
+	<bean id="test.sendOrderCompletedNotificationAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.SendOrderCompletedNotification"  parent="abstractAction"/>
+	<bean id="test.scheduleForCleanUpAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.ScheduleForCleanUp"  parent="abstractAction"/>
+	<bean id="test.notifyCustomerAboutFraudAction" class="com.gofar.tourtravel.fulfilmentprocess.test.actions.NotifyCustomerAboutFraud"  parent="abstractAction"/>
 
 </beans>

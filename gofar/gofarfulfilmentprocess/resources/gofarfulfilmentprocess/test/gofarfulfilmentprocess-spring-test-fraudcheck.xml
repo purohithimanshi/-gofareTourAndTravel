@@ -20,11 +20,11 @@
            http://www.springframework.org/schema/aop
            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
-	<bean id="listenerOrderFraudCustomerNotificationEvent" class="com.gofer.travelogix.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderFraudCustomerEventListener"/>
+	<bean id="listenerOrderFraudCustomerNotificationEvent" class="com.gofar.tourtravel.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderFraudCustomerEventListener"/>
 	
-	<bean id="listenerOrderPlacedEvent" class="com.gofer.travelogix.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderPlacedEventListener"/>
+	<bean id="listenerOrderPlacedEvent" class="com.gofar.tourtravel.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderPlacedEventListener"/>
 	
-	<bean id="listenerOrderFraudEmployeeNotificationEvent" class="com.gofer.travelogix.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderFraudEmployeeEventListener"/>
+	<bean id="listenerOrderFraudEmployeeNotificationEvent" class="com.gofar.tourtravel.fulfilmentprocess.test.FraudCheckIntegrationTest.OrderFraudEmployeeEventListener"/>
 	
 	<!-- Payment mockup implementation -->
 	<bean name="mockupCommandFactory" class="de.hybris.platform.payment.commands.factory.impl.DefaultCommandFactoryImpl" >

@@ -13,7 +13,7 @@
 # Import Admin Cockpit customizations
 #
 
-$jarResource=jar:com.gofer.travelogix.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/admincockpit
+$jarResource=jar:com.gofar.tourtravel.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/admincockpit
 
 
 INSERT_UPDATE CockpitUIScriptConfigMedia;code[unique=true];allowScriptEvaluation;mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]

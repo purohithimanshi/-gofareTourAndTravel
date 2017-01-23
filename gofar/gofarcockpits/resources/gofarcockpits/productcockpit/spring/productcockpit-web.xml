@@ -31,14 +31,14 @@
 	</bean>
 	
 	<alias name="defaultExternalTaxesSection" alias="externalTaxesSection"/>
-	<bean id="defaultExternalTaxesSection" class="com.gofer.travelogix.cockpits.productcockpit.editor.ExternalTaxesSectionConfiguration" scope="session">
+	<bean id="defaultExternalTaxesSection" class="com.gofar.tourtravel.cockpits.productcockpit.editor.ExternalTaxesSectionConfiguration" scope="session">
 		<property name="sectionRenderer">
 			<ref bean="externalTaxesSectionRenderer"/>
 		</property>
 	</bean>
 	
 	<alias name="defaultExternalTaxesSectionRenderer" alias="externalTaxesSectionRenderer"/>
-	<bean id="defaultExternalTaxesSectionRenderer" class="com.gofer.travelogix.cockpits.productcockpit.editor.ExternalTaxesSectionRenderer" scope="prototype">
+	<bean id="defaultExternalTaxesSectionRenderer" class="com.gofar.tourtravel.cockpits.productcockpit.editor.ExternalTaxesSectionRenderer" scope="prototype">
 		<property name="typeService" ref="cockpitTypeService"/>
 		<property name="productTaxCodeService" ref="productTaxCodeService"/>
 	</bean>

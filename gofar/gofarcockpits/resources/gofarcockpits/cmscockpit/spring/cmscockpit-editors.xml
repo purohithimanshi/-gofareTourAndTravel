@@ -146,7 +146,7 @@
 							<entry key="multi" value="de.hybris.platform.cockpit.model.editor.impl.GenericCollectionUIEditor"/>
 							<entry key="range" value="de.hybris.platform.cockpit.model.editor.impl.GenericRangeUIEditor"/>
 							<entry key="uiExperience"
-							       value="com.gofer.travelogix.cockpits.cmscockpit.editor.UiExperienceLevelEnumEditor"/>
+							       value="com.gofar.tourtravel.cockpits.cmscockpit.editor.UiExperienceLevelEnumEditor"/>
 						</map>
 					</property>
 					<property name="label" value="enumEditor"/>

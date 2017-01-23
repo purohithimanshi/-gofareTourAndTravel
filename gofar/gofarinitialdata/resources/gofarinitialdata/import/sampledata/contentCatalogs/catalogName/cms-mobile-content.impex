@@ -25,9 +25,9 @@ $image=image(code, $contentCV);
 $media=media(code, $contentCV);
 $page=page(uid, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
-$siteResource=jar:com.gofer.travelogix.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/contentCatalogs/$contentCatalog
-$productResource=jar:com.gofer.travelogix.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/productCatalogs/$productCatalog
-$jarResourceCms=jar:com.gofer.travelogix.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/cockpits/cmscockpit
+$siteResource=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/contentCatalogs/$contentCatalog
+$productResource=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/productCatalogs/$productCatalog
+$jarResourceCms=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/cockpits/cmscockpit
 #################################################################
 
 

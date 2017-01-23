@@ -28,12 +28,12 @@
 	<import resource="classpath:/gofarcore/integration/hot-folder-common-spring.xml"/>
 
 	<!-- SystemSetup for the GofarCore -->
-	<bean id="acceleratorCoreSystemSetup" class="com.gofer.travelogix.core.setup.CoreSystemSetup"
+	<bean id="acceleratorCoreSystemSetup" class="com.gofar.tourtravel.core.setup.CoreSystemSetup"
 	       parent="abstractCoreSystemSetup"/>
 
 	<!-- Solr field value providers -->
 	
-	<bean id="volumeAwareProductPriceValueProvider" class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
+	<bean id="volumeAwareProductPriceValueProvider" class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.VolumeAwareProductPriceValueProvider"  parent="abstractPropertyFieldValueProvider">
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
         <property name="priceService" ref="priceService"/>
         <property name="commonI18NService" ref="commonI18NService"/>
@@ -43,9 +43,9 @@
         <property name="catalogVersionService" ref="catalogVersionService"/>
     </bean>
 
-    <bean id="volumePriceComparator" class="com.gofer.travelogix.core.comparators.VolumeAwarePriceInformationComparator" scope="singleton"/>
+    <bean id="volumePriceComparator" class="com.gofar.tourtravel.core.comparators.VolumeAwarePriceInformationComparator" scope="singleton"/>
 
-    <bean id="productVolumePricesProvider" class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.ProductVolumePricesProvider"  parent="abstractPropertyFieldValueProvider">
+    <bean id="productVolumePricesProvider" class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.ProductVolumePricesProvider"  parent="abstractPropertyFieldValueProvider">
         <property name="fieldNameProvider" ref="solrFieldNameProvider"/>
         <property name="priceService" ref="priceService"/>
     </bean>
@@ -157,13 +157,13 @@
 	</bean>
 
 	<bean id="colorFacetValueProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.ColorFacetValueProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.ColorFacetValueProvider"
 	       parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
 	<bean id="colorFacetDisplayNameProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.ColorFacetDisplayNameProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.ColorFacetDisplayNameProvider"
 	      >
 		<property name="enumerationService" ref="enumerationService"/>
 		<property name="i18nService" ref="i18nService"/>
@@ -171,25 +171,25 @@
 	</bean>
 	
 	<bean id="apparelPointOfServiceFacetDisplayNameProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
 	      >
 		<property name="pointOfServiceService" ref="pointOfServiceService"/>
 	</bean>
 	
 	<bean id="electronicsPointOfServiceFacetDisplayNameProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.PointOfServiceFacetDisplayNameProvider"
 	      >
 		<property name="pointOfServiceService" ref="pointOfServiceService"/>
 	</bean>
 
 	<bean id="genderValueProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.GenderValueProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.GenderValueProvider"
 	       parent="abstractPropertyFieldValueProvider">
 		<property name="fieldNameProvider" ref="solrFieldNameProvider"/>
 	</bean>
 
 	<bean id="genderFacetDisplayNameProvider"
-	      class="com.gofer.travelogix.core.search.solrfacetsearch.provider.impl.GenderFacetDisplayNameProvider"
+	      class="com.gofar.tourtravel.core.search.solrfacetsearch.provider.impl.GenderFacetDisplayNameProvider"
 	      >
 		<property name="enumerationService" ref="enumerationService"/>
 		<property name="i18nService" ref="i18nService"/>
@@ -201,61 +201,61 @@
 		must be configured with a lookup method.
 	-->
 	<bean id="orderCancelledEventListener"
-	      class="com.gofer.travelogix.core.event.OrderCancelledEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.OrderCancelledEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="orderRefundEventListener"
-	      class="com.gofer.travelogix.core.event.OrderRefundEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.OrderRefundEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="customerRegistrationEventListener"
-	      class="com.gofer.travelogix.core.event.RegistrationEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.RegistrationEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="forgottenPasswordEventListener"
-	      class="com.gofer.travelogix.core.event.ForgottenPasswordEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.ForgottenPasswordEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
-	<bean id="submitOrderEventListener" class="com.gofer.travelogix.core.event.SubmitOrderEventListener" parent="abstractAcceleratorSiteEventListener">
+	<bean id="submitOrderEventListener" class="com.gofar.tourtravel.core.event.SubmitOrderEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="businessProcessService" ref="businessProcessService"/>
 		<property name="modelService" ref="modelService"/>
 		<property name="baseStoreService" ref="baseStoreService"/>
 	</bean>
 	<bean id="orderConfirmationEventListener"
-	      class="com.gofer.travelogix.core.event.OrderConfirmationEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.OrderConfirmationEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="sendDeliveryMessageEventListener"
-	      class="com.gofer.travelogix.core.event.SendDeliveryMessageEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.SendDeliveryMessageEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="sendReadyForPickupMessageEventListener"
-	      class="com.gofer.travelogix.core.event.SendReadyForPickupMessageEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.SendReadyForPickupMessageEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="sendOrderPartiallyCanceledMessageEventListener"
-	      class="com.gofer.travelogix.core.event.SendOrderPartiallyCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.SendOrderPartiallyCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="sendOrderPartiallyRefundedMessageEventListener"
-	      class="com.gofer.travelogix.core.event.SendOrderPartiallyRefundedMessageEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.SendOrderPartiallyRefundedMessageEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
 	<bean id="sendNotPickedUpConsignmentCanceledMessageEventListener"
-	      class="com.gofer.travelogix.core.event.SendNotPickedUpConsignmentCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
+	      class="com.gofar.tourtravel.core.event.SendNotPickedUpConsignmentCanceledMessageEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
-	<bean id="orderCompletedEventListener" class="com.gofer.travelogix.core.event.OrderCompletedEventListener" parent="abstractAcceleratorSiteEventListener">
+	<bean id="orderCompletedEventListener" class="com.gofar.tourtravel.core.event.OrderCompletedEventListener" parent="abstractAcceleratorSiteEventListener">
 		<property name="modelService" ref="modelService"/>
 		<property name="businessProcessService" ref="businessProcessService"/>
 	</bean>
@@ -370,17 +370,17 @@
 	<!-- Simple Suggestion Service -->
 	<alias alias="simpleSuggestionService" name="defaultSimpleSuggestionService"/>
 	<bean id="defaultSimpleSuggestionService"
-	      class="com.gofer.travelogix.core.suggestion.impl.DefaultSimpleSuggestionService" >
+	      class="com.gofar.tourtravel.core.suggestion.impl.DefaultSimpleSuggestionService" >
 		<property name="simpleSuggestionDao" ref="simpleSuggestionDao"/>
 	</bean>
 	<alias alias="simpleSuggestionDao" name="defaultSimpleSuggestionDao"/>
 	<bean id="defaultSimpleSuggestionDao"
-	      class="com.gofer.travelogix.core.suggestion.dao.impl.DefaultSimpleSuggestionDao"
+	      class="com.gofar.tourtravel.core.suggestion.dao.impl.DefaultSimpleSuggestionDao"
 	      parent="abstractItemDao" >
 		<property name="flexibleSearchService" ref="flexibleSearchService"/>
 	</bean>
 
-	<bean id="mccSiteUrlHelper" class="com.gofer.travelogix.core.util.MccSiteUrlHelper" >
+	<bean id="mccSiteUrlHelper" class="com.gofar.tourtravel.core.util.MccSiteUrlHelper" >
 		<property name="siteChannelValidationStrategy" ref="siteChannelValidationStrategy"/>
 		<property name="siteBaseUrlResolutionService" ref="siteBaseUrlResolutionService"/>
 		<property name="cmsSiteService" ref="cmsSiteService"/>
@@ -389,14 +389,14 @@
 
 	<!-- checkout flow configuration -->
 	
-	<bean id="pickUpInStoreCheckoutFlowStrategy" class="com.gofer.travelogix.core.checkout.flow.impl.PickUpInStoreCheckoutFlowStrategy" >
+	<bean id="pickUpInStoreCheckoutFlowStrategy" class="com.gofar.tourtravel.core.checkout.flow.impl.PickUpInStoreCheckoutFlowStrategy" >
 		<property name="pickupStrategy" ref="pickupStrategy" />
 		<property name="defaultStrategy" ref="siteCheckoutFlowStrategy"/>
 		<property name="multiStepCheckoutFlowStrategy" ref="multiStepCheckoutFlowStrategy" />
 	</bean>	
 
 	<bean id="siteCheckoutFlowStrategy"
-	      class="com.gofer.travelogix.core.checkout.flow.impl.SiteCheckoutFlowStrategy" >
+	      class="com.gofar.tourtravel.core.checkout.flow.impl.SiteCheckoutFlowStrategy" >
 		<!-- This strategy looks up a strategy based on the current site UID -->
 		<property name="cmsSiteService" ref="cmsSiteService"/>
 		<property name="siteMappings">
@@ -412,7 +412,7 @@
 	</bean>
 
 	<bean id="newCustomerCheckoutFlowStrategy"
-	      class="com.gofer.travelogix.core.checkout.flow.impl.NewCustomerCheckoutFlowStrategy" >
+	      class="com.gofar.tourtravel.core.checkout.flow.impl.NewCustomerCheckoutFlowStrategy" >
 		<!-- This strategy works out if the user has created any data -->
 		<property name="userService" ref="userService"/>
 		<property name="customerAccountService" ref="customerAccountService"/>
@@ -432,7 +432,7 @@
 	</bean>
 
 	<bean id="apparelSizeProductReferenceTargetStrategy"
-	      class="com.gofer.travelogix.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
+	      class="com.gofar.tourtravel.core.strategies.impl.ApparelSizeProductReferenceTargetStrategy">
 		<property name="commerceCategoryService" ref="commerceCategoryService"/>
 		<property name="rootCategoryCode" value="categories"/>
 	</bean>

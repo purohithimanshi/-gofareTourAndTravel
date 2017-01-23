@@ -9,7 +9,7 @@
 # Information and shall use it only in accordance with the terms of the
 # license agreement you entered into with SAP.
 # -----------------------------------------------------------------------
-$jarResource=jar:com.gofer.travelogix.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/cscockpit
+$jarResource=jar:com.gofar.tourtravel.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/cscockpit
 
 #
 # Load medias

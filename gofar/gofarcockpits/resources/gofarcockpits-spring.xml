@@ -25,7 +25,7 @@
         
     <context:annotation-config/>
 
-	<bean id="yAcceleratorCockpitsSystemSetup" class="com.gofer.travelogix.cockpits.setup.CockpitSystemSetup"  parent="abstractCoreSystemSetup"/>
+	<bean id="yAcceleratorCockpitsSystemSetup" class="com.gofar.tourtravel.cockpits.setup.CockpitSystemSetup"  parent="abstractCoreSystemSetup"/>
 
 	<alias alias="gofarcockpitsLabelLocator" name="defaultYacceleratorcockpitsLabelLocator" />
 	<bean id="defaultYacceleratorcockpitsLabelLocator" class="de.hybris.platform.cockpit.util.ConfigurableCockpitLabelLocator" scope="singleton" lazy-init="false">
@@ -34,12 +34,12 @@
 
 	<alias alias="cmsPreviewService" name="defaultCMSCockpitLivePreviewService" />
 	<bean id="defaultCMSCockpitLivePreviewService"
-		class="com.gofer.travelogix.cockpits.cmscockpit.services.impl.DefaultCMSCockpitLivePreviewService"
+		class="com.gofar.tourtravel.cockpits.cmscockpit.services.impl.DefaultCMSCockpitLivePreviewService"
 		parent="defaultCMSPreviewService" >
 	</bean>
 
 	<alias alias="imageMediaPredefinedValuesStrategy" name="defaultImageMediaPredefinedValuesStrategy"/>
-	<bean id="defaultImageMediaPredefinedValuesStrategy" class="com.gofer.travelogix.cockpits.cockpit.wizard.strategies.DefaultImageMediaPredefinedValuesStrategy" >
+	<bean id="defaultImageMediaPredefinedValuesStrategy" class="com.gofar.tourtravel.cockpits.cockpit.wizard.strategies.DefaultImageMediaPredefinedValuesStrategy" >
 		<property name="mediaService" ref="mediaService"/>
 		<property name="mediaFolderName" value="images"/>
 	</bean>
@@ -48,7 +48,7 @@
 	<util:map id="accRecipientTypeToContextClassMap">
 		<entry>
 			<key><util:constant static-field="de.hybris.platform.ticket.enums.CsEmailRecipients.CUSTOMER"/></key>
-			<value>com.gofer.travelogix.cockpits.ticket.email.context.AcceleratorCustomerTicketContext</value>
+			<value>com.gofar.tourtravel.cockpits.ticket.email.context.AcceleratorCustomerTicketContext</value>
 		</entry>
 		<entry>
 			<key><util:constant static-field="de.hybris.platform.ticket.enums.CsEmailRecipients.ASSIGNEDAGENT"/></key>

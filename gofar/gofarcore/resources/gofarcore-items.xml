@@ -48,7 +48,7 @@
 		<typegroup name="Apparel">
 			<itemtype code="ApparelProduct" extends="Product"
 			          autocreate="true" generate="true"
-			          jaloclass="com.gofer.travelogix.core.jalo.ApparelProduct">
+			          jaloclass="com.gofar.tourtravel.core.jalo.ApparelProduct">
 				<description>Base apparel product extension that contains additional attributes.</description>
 				<attributes>
 					<attribute qualifier="genders" type="GenderList">
@@ -61,7 +61,7 @@
 
 			<itemtype code="ApparelStyleVariantProduct" extends="VariantProduct"
 			          autocreate="true" generate="true"
-			          jaloclass="com.gofer.travelogix.core.jalo.ApparelStyleVariantProduct">
+			          jaloclass="com.gofar.tourtravel.core.jalo.ApparelStyleVariantProduct">
 				<description>Apparel style variant type that contains additional attribute describing variant style.
 				</description>
 				<attributes>
@@ -84,7 +84,7 @@
 
 			<itemtype code="ApparelSizeVariantProduct" extends="ApparelStyleVariantProduct"
 			          autocreate="true" generate="true"
-			          jaloclass="com.gofer.travelogix.core.jalo.ApparelSizeVariantProduct">
+			          jaloclass="com.gofar.tourtravel.core.jalo.ApparelSizeVariantProduct">
 				<description>Apparel size variant type that contains additional attribute describing variant size.
 				</description>
 				<attributes>
@@ -101,7 +101,7 @@
 		<typegroup name="Electronics">
 			<itemtype code="ElectronicsColorVariantProduct" extends="VariantProduct"
           autocreate="true" generate="true"
-          jaloclass="com.gofer.travelogix.core.jalo.ElectronicsColorVariantProduct">
+          jaloclass="com.gofar.tourtravel.core.jalo.ElectronicsColorVariantProduct">
 				 <description>Electronics color variant type that contains additional attribute describing variant color.
 				</description>
 				<attributes>

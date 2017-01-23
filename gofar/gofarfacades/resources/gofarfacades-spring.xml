@@ -23,7 +23,7 @@
 	<context:annotation-config/> 
 
 	<alias alias="simpleSuggestionFacade" name="defaultSimpleSuggestionFacade"/>
-	<bean id="defaultSimpleSuggestionFacade" class="com.gofer.travelogix.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
+	<bean id="defaultSimpleSuggestionFacade" class="com.gofar.tourtravel.facades.suggestion.impl.DefaultSimpleSuggestionFacade" >
 		<property name="simpleSuggestionService" ref="simpleSuggestionService"/>
 		<property name="userService" ref="userService"/>
 		<property name="categoryService" ref="categoryService"/>
@@ -51,7 +51,7 @@
 	</bean>
 
 	<alias name="defaultAcceleratorVariantOptionDataPopulator" alias="acceleratorVariantOptionDataPopulator"/>
-	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.gofer.travelogix.facades.populators.AcceleratorVariantOptionDataPopulator"
+	<bean id="defaultAcceleratorVariantOptionDataPopulator"  class="com.gofar.tourtravel.facades.populators.AcceleratorVariantOptionDataPopulator"
 	      parent="variantOptionDataPopulator" >
 		<property name="mediaService" ref="mediaService"/>
 		<property name="mediaContainerService" ref="mediaContainerService"/>
@@ -67,7 +67,7 @@
 
 	<alias name="acceleratorGenderConverter" alias="genderConverter"/> 
 	<bean id="acceleratorGenderConverter" parent="abstractPopulatingConverter">
-		<property name="targetClass" value="com.gofer.travelogix.facades.product.data.GenderData"/>
+		<property name="targetClass" value="com.gofar.tourtravel.facades.product.data.GenderData"/>
 			<property name="populators">
 				<list>
 					<ref bean="genderDataPopulator"/>
@@ -76,11 +76,11 @@
 	</bean>
 
 	<alias name="defaultGenderDataPopulator" alias="genderDataPopulator"/>
-	<bean id="defaultGenderDataPopulator" class="com.gofer.travelogix.facades.populators.GenderDataPopulator" >
+	<bean id="defaultGenderDataPopulator" class="com.gofar.tourtravel.facades.populators.GenderDataPopulator" >
 		<property name="typeService" ref="typeService"/>
 	</bean>
 
-	<bean id="apparelProductPopulator" class="com.gofer.travelogix.facades.populators.ApparelProductPopulator" >
+	<bean id="apparelProductPopulator" class="com.gofar.tourtravel.facades.populators.ApparelProductPopulator" >
 		<property name="genderConverter" ref="genderConverter"/>
 	</bean>
 
@@ -130,61 +130,61 @@
 		</property>
 	</bean>
 
-	<bean id="customerEmailContext" class="com.gofer.travelogix.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="customerEmailContext" class="com.gofar.tourtravel.facades.process.email.context.CustomerEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="customerConverter" ref="customerConverter"/>
 	</bean>
 
-	<bean id="forgottenPasswordEmailContext" class="com.gofer.travelogix.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
+	<bean id="forgottenPasswordEmailContext" class="com.gofar.tourtravel.facades.process.email.context.ForgottenPasswordEmailContext" parent="customerEmailContext" scope="prototype" >
 		<property name="customerConverter" ref="customerConverter"/>
 	</bean>
 	
-	<bean id="orderNotificationEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderNotificationEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderNotificationEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
 	
-	<bean id="deliverySentEmailContext" class="com.gofer.travelogix.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="deliverySentEmailContext" class="com.gofar.tourtravel.facades.process.email.context.DeliverySentEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 	</bean>
 	
-	<bean id="readyForPickupEmailContext" class="com.gofer.travelogix.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="readyForPickupEmailContext" class="com.gofar.tourtravel.facades.process.email.context.ReadyForPickupEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 	</bean>
 	
-	<bean id="orderCancelledEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderCancelledEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderCancelledEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
 	
-	<bean id="orderRefundEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderRefundEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderRefundEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 	</bean>
-	<bean id="consignmentCollectionReminderEmailContext" class="com.gofer.travelogix.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
+	<bean id="consignmentCollectionReminderEmailContext" class="com.gofar.tourtravel.facades.process.email.context.ConsignmentCollectionReminderEmailContext" parent="abstractEmailContext" scope="prototype">
         <property name="consignmentConverter" ref="consignmentConverter"/>
         <property name="formatFactory" ref="formatFactory"/>
         <property name="customerServiceUncollectedConsignmentStrategy" ref="customerServiceUncollectedConsignmentStrategy" />
         <property name="orderConverter" ref="orderConverter"/>
     </bean>
 
-	<bean id="orderPartiallyModifiedEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="orderPartiallyModifiedEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderPartiallyModifiedEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="orderConverter" ref="orderConverter"/>
 		<property name="orderEntryConverter" ref="orderEntryConverter"/>
 		<property name="priceDataFactory" ref="priceDataFactory"/>		
 	</bean>
 
-	<bean id="orderPartiallyCanceledEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	<bean id="orderPartiallyCanceledEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderPartiallyCanceledEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
 	</bean>
 
-	<bean id="orderPartiallyRefundedEmailContext" class="com.gofer.travelogix.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
+	<bean id="orderPartiallyRefundedEmailContext" class="com.gofar.tourtravel.facades.process.email.context.OrderPartiallyRefundedEmailContext" parent="orderPartiallyModifiedEmailContext" scope="prototype" >
 	</bean>
 
-	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.gofer.travelogix.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
+	<bean id="notPickedUpConsignmentCanceledEmailContext" class="com.gofar.tourtravel.facades.process.email.context.NotPickedUpConsignmentCanceledEmailContext" parent="abstractEmailContext" scope="prototype" >
 		<property name="consignmentConverter" ref="consignmentConverter"/>
 		<property name="priceDataFactory" ref="priceDataFactory"/>
 	</bean>
 
 	<alias name="yacceleratorSearchPagePointOfServiceDistancePopulator" alias="searchPagePointOfServiceDistancePopulator" />
-	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.gofer.travelogix.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
+	<bean id="yacceleratorSearchPagePointOfServiceDistancePopulator" class="com.gofar.tourtravel.facades.storefinder.populators.SearchPagePointOfServiceDistancePopulator" >
 		<property name="pointOfServiceDistanceConverter" ref="pointOfServiceDistanceConverter"/>
 	</bean>
 
-	<bean id="genderData" class="com.gofer.travelogix.facades.product.data.GenderData" scope="prototype"/>
+	<bean id="genderData" class="com.gofar.tourtravel.facades.product.data.GenderData" scope="prototype"/>
 </beans>

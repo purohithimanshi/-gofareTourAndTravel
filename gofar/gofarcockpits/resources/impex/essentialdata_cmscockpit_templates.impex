@@ -13,7 +13,7 @@
 # Import CMS Cockpit customizations
 #
 
-$jarResource=jar:com.gofer.travelogix.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/cmscockpit
+$jarResource=jar:com.gofar.tourtravel.cockpits.constants.GofarCockpitsConstants&/gofarcockpits/cmscockpit
 
 
 INSERT_UPDATE CockpitUIScriptConfigMedia;code[unique=true];allowScriptEvaluation;mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true]
