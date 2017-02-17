@@ -22,3 +22,7 @@ $lang=en
 
 # Create Categories
 UPDATE Category;code[unique=true];$catalogVersion;name[lang=$lang]
+;101;;Accommodation
+;102;;Flights
+;103;;Buses
+
