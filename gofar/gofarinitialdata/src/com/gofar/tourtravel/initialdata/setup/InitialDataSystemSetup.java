@@ -78,13 +78,17 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	 *           the context provides the selected parameters and values
 	 */
 	@SystemSetup(type = Type.ESSENTIAL, process = Process.ALL)
-	public void createEssentialData(final SystemSetupContext context)
+	public void createEssentialData(final SystemSetupContext pContext)
 	{
 		LOG.debug("InitialDataSystemSetup : createEssentialData() : ");
 		getSetupImpexService().importImpexFile(
-				String.format("/%s/import/coredata/common/cockpits-usergroups.impex", context.getExtensionName()), false);
+				String.format("/%s/import/coredata/common/cockpits-usergroups.impex", pContext.getExtensionName()), false);
 		getSetupImpexService().importImpexFile(
-				String.format("/%s/import/sampledata/commerceorg/user-groups.impex", context.getExtensionName()), false);
+				String.format("/%s/import/sampledata/commerceorg/user-groups.impex", pContext.getExtensionName()), false);
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
 		LOG.debug("InitialDataSystemSetup : createEssentialData() : Exiting.");
 
 		// Add Essential Data here as you require
@@ -131,10 +135,6 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/" + pSiteName + "/sync_job_restriction.impex");
 		importImpexFile(pContext, "gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content_en.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content.impex");
