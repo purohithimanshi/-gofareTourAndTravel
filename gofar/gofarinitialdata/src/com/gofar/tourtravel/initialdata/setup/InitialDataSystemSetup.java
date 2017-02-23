@@ -80,43 +80,22 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	@SystemSetup(type = Type.ESSENTIAL, process = Process.ALL)
 	public void createEssentialData(final SystemSetupContext context)
 	{
-		importImpexFile(context, "/gofarinitialdata/import/coredata/common/essential-data.impex");
 		LOG.debug("InitialDataSystemSetup : createEssentialData() : ");
+		getSetupImpexService().importImpexFile(
+				String.format("/%s/import/coredata/common/cockpits-usergroups.impex", context.getExtensionName()), false);
+		getSetupImpexService().importImpexFile(
+				String.format("/%s/import/sampledata/commerceorg/user-groups.impex", context.getExtensionName()), false);
+		LOG.debug("InitialDataSystemSetup : createEssentialData() : Exiting.");
+
 		// Add Essential Data here as you require
 	}
 
-	/**
-	 * Implement this method to create data that is used in your project. This method will be called during the system
-	 * initialization. <br>
-	 * Add import data for each site you have configured
-	 *
-	 * <pre>
-	 * final List<ImportData> importData = new ArrayList<ImportData>();
-	 *
-	 * final ImportData sampleImportData = new ImportData();
-	 * sampleImportData.setProductCatalogName(SAMPLE_PRODUCT_CATALOG_NAME);
-	 * sampleImportData.setContentCatalogNames(Arrays.asList(SAMPLE_CONTENT_CATALOG_NAME));
-	 * sampleImportData.setStoreNames(Arrays.asList(SAMPLE_STORE_NAME));
-	 * importData.add(sampleImportData);
-	 *
-	 * getCoreDataImportService().execute(this, context, importData);
-	 * getEventService().publishEvent(new CoreDataImportedEvent(context, importData));
-	 *
-	 * getSampleDataImportService().execute(this, context, importData);
-	 * getEventService().publishEvent(new SampleDataImportedEvent(context, importData));
-	 * </pre>
-	 *
-	 * @param context
-	 *           the context provides the selected parameters and values
-	 */
 	@SystemSetup(type = Type.PROJECT, process = Process.ALL)
 	public void createProjectData(final SystemSetupContext context)
 	{
 		LOG.debug("InitialDataSystemSetup : createProjectData() : ");
 		// Importing gofar site data
-
 		setUpSitedata(GOFAR, context);
-
 		LOG.debug("InitialDataSystemSetup : createProjectData() : Exiting.");
 	}
 
@@ -135,10 +114,9 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		gofarImportData.setProductCatalogName(pSiteName);
 		importDatas.add(gofarImportData);
 		importSyncData(pSiteName, pContext);
-
-
 		getCoreDataImportService().execute(this, pContext, importDatas);
 		getEventService().publishEvent(new CoreDataImportedEvent(pContext, importDatas));
+
 		getSampleDataImportService().execute(this, pContext, importDatas);
 		getEventService().publishEvent(new SampleDataImportedEvent(pContext, importDatas));
 
@@ -152,6 +130,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	{
 		importImpexFile(pContext,
 				"/gofarinitialdata/resources/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/" + pSiteName + "/sync_job_restriction.impex");
 		importImpexFile(pContext,
 				"/gofarinitialdata/resources/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
 		importImpexFile(pContext, "/gofarinitialdata/resources/gofarinitialdata/import/coredata/stores/storeName/site.impex");
@@ -174,7 +153,6 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products.impex");
 		importImpexFile(pContext,
 				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products_en.impex");
-
 
 	}
 
