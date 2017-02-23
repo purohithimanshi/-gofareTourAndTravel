@@ -128,31 +128,21 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	 */
 	private void importSyncData(final String pSiteName, final SystemSetupContext pContext)
 	{
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/" + pSiteName + "/sync_job_restriction.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/resources/gofarinitialdata/import/coredata/stores/storeName/site.impex");
-		importImpexFile(pContext, "/gofarinitialdata/resources/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/resources/gofarinitialdata/import/coredata/stores/storeName/store.impex");
-		importImpexFile(pContext, "/gofarinitialdata/resources/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content_en.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content_en.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories_en.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products.impex");
-		importImpexFile(pContext,
-				"/gofarinitialdata/resources/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products_en.impex");
+		importImpexFile(pContext, "gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products_en.impex");
 
 	}
 
