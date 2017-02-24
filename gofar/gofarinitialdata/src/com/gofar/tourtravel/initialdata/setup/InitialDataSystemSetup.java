@@ -133,6 +133,7 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	private void importSyncData(final String pSiteName, final SystemSetupContext pContext)
 	{
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/productCatalogs/catalogName/catalog.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/" + pSiteName + "/sync_job_restriction.impex");
 		importImpexFile(pContext, "gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content.impex");
@@ -143,6 +144,10 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories_en.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products_en.impex");
+		
+		
+		
+		
 
 	}
 

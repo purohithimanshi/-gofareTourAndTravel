@@ -22,3 +22,4 @@ $approved=approvalstatus(code)[default='check']
 
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
+;1001;;
