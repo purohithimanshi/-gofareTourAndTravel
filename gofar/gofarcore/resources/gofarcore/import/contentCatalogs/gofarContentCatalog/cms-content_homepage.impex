@@ -24,6 +24,43 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 ;;LandingPage2Template;Landing Page 2 Template;layout/landingLayout2Page;$jarResourceCms/structure-view/structure_landingPage2Template.vm;CategoryPage,ContentPage	
 
 
+###  Define Content SlotNames  ###
+INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+;SearchBox;;;searchbox
+;HeaderLinksLeft;;;
+;HomepageBanner;;;
+
+
+###  Define Content Slots  ###
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[default=true]
+;;SearchBoxSlot;Search Box Slot
+;;HeaderLinksLeftSlot;Header Links Left Slot
+;;HomepageBannerSlot;Homepage Banner Slot
+
+###  Define ContentSlot For Template  ###
+INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
+;;SearchBox-LandingPage2;SearchBox;;SearchBoxSlot;true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

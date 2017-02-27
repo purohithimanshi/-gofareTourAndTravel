@@ -85,10 +85,8 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 				String.format("/%s/import/coredata/common/cockpits-usergroups.impex", pContext.getExtensionName()), false);
 		getSetupImpexService().importImpexFile(
 				String.format("/%s/import/sampledata/commerceorg/user-groups.impex", pContext.getExtensionName()), false);
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
+
+
 		LOG.debug("InitialDataSystemSetup : createEssentialData() : Exiting.");
 
 		// Add Essential Data here as you require
@@ -132,22 +130,28 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 	 */
 	private void importSyncData(final String pSiteName, final SystemSetupContext pContext)
 	{
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/coredata/productCatalogs/catalogName/catalog.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/contentCatalogs/gofarContentCatalog/catalog.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/productCatalogs/gofarProductCatalog/catalog.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/" + pSiteName + "/sync_job_restriction.impex");
-		importImpexFile(pContext, "gofarinitialdata/import/coredata/contentCatalogs/catalogName/catalog_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/cms-content_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/catalogName/email-content_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/categories_en.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products.impex");
-		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/catalogName/products_en.impex");
-		
-		
-		
-		
+		importImpexFile(pContext, "gofarinitialdata/import/coredata/contentCatalogs/gofarContentCatalog/catalog_en.impex");
+		importImpexFile(pContext, "gofarinitialdata/import/coredata/productCatalogs/gofarProductCatalog/catalog_en.impex");
+
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/gofarContentCatalog/cms-content.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/gofarContentCatalog/cms-content_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/gofarContentCatalog/email-content.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/contentCatalogs/gofarContentCatalog/email-content_en.impex");
+
+
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/gofarProductCatalog/categories.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/gofarProductCatalog/categories_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/gofarProductCatalog/products.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/sampledata/productCatalogs/gofarProductCatalog/products_en.impex");
+
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/store_en.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
+		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
+
 
 	}
 
