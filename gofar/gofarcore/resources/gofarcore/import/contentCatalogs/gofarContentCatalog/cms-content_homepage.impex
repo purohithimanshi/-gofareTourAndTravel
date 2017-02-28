@@ -12,7 +12,7 @@
 #
 # Import the CMS content for the nasco site
 #
-$contentCatalog=nascoContentCatalog
+$contentCatalog=gofarContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
 
 # Import modulegen config properties into impex macros
@@ -42,7 +42,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[d
 ###  Define ContentSlot For Template  ###
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
 ;;SearchBox-LandingPage2;SearchBox;;SearchBoxSlot;true
-;;Footer-LandingPage2;Footer;FooterSlot;true
+;;Footer-LandingPage2;Footer;;FooterSlot;true
 
 
 ########################### Define Content slots for page######################
