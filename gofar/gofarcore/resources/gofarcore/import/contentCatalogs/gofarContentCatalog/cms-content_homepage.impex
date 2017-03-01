@@ -29,7 +29,7 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;SearchBox;;;searchbox
 ;HeaderLinksLeft;;;
 ;HomepageBanner;;;
-;Footer;;;	
+;Footer;;FooterComponent;	
 
 
 ###  Define Content Slots  ###

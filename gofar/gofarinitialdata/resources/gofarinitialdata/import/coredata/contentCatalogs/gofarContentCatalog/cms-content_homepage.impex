@@ -22,7 +22,7 @@ $page=page(uid, $contentCV);
 $contentPage=contentPage(uid, $contentCV);
 $product=product(code, $productCV)
 $category=category(code, $productCV)
-$siteResource=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/contentCatalogs/$contentCatalog$productResource=jar:com.nasco.initialdata.constants.NascoInitialDataConstants&/nascoinitialdata/import/sampledata/productCatalogs/$productCatalog
+$siteResource=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/contentCatalogs/$contentCatalog
 $productResource=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/productCatalogs/$productCatalog
 $jarResourceCms=jar:com.gofar.tourtravel.initialdata.setup.InitialDataSystemSetup&/gofarinitialdata/import/cockpits/cmscockpit
 $medias=medias(code, $contentCV);
@@ -33,6 +33,21 @@ $lang=en
 # CMS Site Settings
 UPDATE CMSSite;uid[unique=true];defaultPreviewCategory(code, $productCV);defaultPreviewProduct(code, $productCV);theme(code)
 ;$siteUid;;;gofar
+
+################################### MEDIA ################################################
+INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator][forceWrite=true];altText
+
+#################################################END####################################################
+###### Navigation Start ######
+## navigation is in tree structure ##
+## level 0 ##
+
+#####FOOTER###########
+INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef;;;;content;
+;;GofarFooterComponent;Gofar Footer Component;GofarFooterComponent;
+	
+UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
+;;FooterSlot;Footer Slot;true;GofarFooterComponent
 
 
 
