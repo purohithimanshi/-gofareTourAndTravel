@@ -10,5 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${commonResourcePath}/css/lib/jquery-ui.css" />
 <link rel="stylesheet" type="text/css" href="${commonResourcePath}/css/lib/magnific-popup.css" />
 <link rel="stylesheet" type="text/css" href="${commonResourcePath}/css/lib/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="${commonResourcePath}/css/lib/demo.css" />
+<link rel="stylesheet" type="text/css" href="${commonResourcePath}/css/lib/style.css" />
 
 
