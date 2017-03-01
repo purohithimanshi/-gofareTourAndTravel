@@ -1,6 +1,7 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="compressible" tagdir="/WEB-INF/tags/desktop/template/compressible" %>
 
 <%@ taglib prefix="cms" tagdir="/WEB-INF/tags/responsive/template/cms" %>
 
@@ -10,8 +11,10 @@
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/all_responsive.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/${themeName}_responsive.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/addons_responsive.css" />
+		<compressible:css/>
 	</c:when>
 	<c:otherwise>
+	<compressible:css/>
 		<%-- Theme CSS files --%>
 		<link rel="stylesheet" type="text/css" media="all" href="${themeResourcePath}/css/style.css"/>
 		<%--  AddOn Common CSS files --%>

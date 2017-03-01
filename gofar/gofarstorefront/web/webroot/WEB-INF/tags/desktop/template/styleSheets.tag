@@ -1,6 +1,7 @@
 <%@ tag body-content="empty" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="compressible" tagdir="/WEB-INF/tags/desktop/template/compressible" %>
 
 <%@ taglib prefix="cms" tagdir="/WEB-INF/tags/desktop/template/cms" %>
 
@@ -9,8 +10,10 @@
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/all_desktop.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/${themeName}_desktop.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="${contextPath}/wro/addons_desktop.css" />
+		<compressible:css/>
 	</c:when>
 	<c:otherwise>
+	<compressible:css/>
 		<%-- colorbox CSS --%>
 		<link rel="stylesheet" type="text/css" media="all" href="${commonResourcePath}/css/jquery.colorbox-1.3.16.css"/>
 		
