@@ -8,15 +8,16 @@
 <%@ taglib prefix="template" tagdir="/WEB-INF/tags/desktop/template" %>
 
 <c:url value="/" var="siteRootUrl"/>
-<compressible:js/>
 <template:javaScriptVariables/>
 
 <c:choose>
 	<c:when test="${wro4jEnabled}">
 	  	<script type="text/javascript" src="${contextPath}/wro/all_desktop.js"></script>
 	  	<script type="text/javascript" src="${contextPath}/wro/addons_desktop.js"></script>
+	  	<compressible:js/>
 	</c:when>
 	<c:otherwise>
+	<compressible:js/>
 		<%-- j query 1.11.2 --%>
 		<script type="text/javascript" src="${commonResourcePath}/js/jquery-1.11.2.min.js"></script>
 		
