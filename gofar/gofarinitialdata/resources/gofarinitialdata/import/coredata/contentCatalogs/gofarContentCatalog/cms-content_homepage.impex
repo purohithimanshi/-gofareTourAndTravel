@@ -95,6 +95,16 @@ INSERT_UPDATE CMSParagraphComponent;$contentCV[unique=true];uid[unique=true];nam
 					</ul>
 				</div>
 			</div>"
+;;AboutUsComponent;About Us Component;AboutUsComponent;"<div class=""col-md-2"">
+				<div class=""widget widget_about_us"">
+					<h3>About Us</h3>
+					<div class=""widget_content"">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+							Vestibulum vel dignissim dolor. Ut risus orci, aliquam sit amet
+							semper eget, egestas aliquam felis.</p>
+					</div>
+				</div>
+			</div>"
 
 			
 UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsComponents(uid,$contentCV)
@@ -103,6 +113,7 @@ UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active;cmsCompo
 ;;SocialNetworkSlot;Social Network Slot;true;SocialNetworkParagraphComponent
 ;;CategoriesSlot;Categories Slot;true;CategoriesParagraphComponent
 ;;RecentBlogSlot;Recent Blog Slot;true;RecentBlogComponent
+;;AboutUsSlot;About Us Slot;true;AboutUsComponent
 
 
 

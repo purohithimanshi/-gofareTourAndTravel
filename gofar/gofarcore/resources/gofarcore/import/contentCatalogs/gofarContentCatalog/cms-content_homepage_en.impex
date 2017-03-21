@@ -24,17 +24,44 @@ $lang=en
 
 		
 ## level 3. children of Category Nav ##
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
-;GofarAboutUsNavNode;;Gofar About Us Nav Node;AboutUsNavNode
+#INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;&nodeRef;children(uid,$contentCV);links(&linkRef);
+#;GofarAboutUsNavNode;;Gofar About Us Nav Node;AboutUsNavNode
 
 ##CMS Navigation Components
-INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
-;GofarAboutUsNavNodeEntry;;Gofar About Us Nav Node Entry;GofarAboutUsNavNode;GofarAboutUSLink
+#INSERT_UPDATE CMSNavigationEntry;uid[unique=true];$contentCV[unique=true];name;navigationNode(&nodeRef);item(CMSLinkComponent.uid,CMSLinkComponent.$contentCV);
+#;GofarAboutUsNavNodeEntry;;Gofar About Us Nav Node Entry;GofarAboutUsNavNode;GofarAboutUSLink
 
 # CMS Link Components
-UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
-;;GofarAboutUSLink;"About Us"
-;;GofarCategoryLink;"Categiries"
-;;GofarRecentBlogLink;"Recent Blog"
+#UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];linkName[lang=$lang]
+#;;GofarAboutUSLink;"About Us"
+#;;GofarCategoryLink;"Categiries"
+#;;GofarRecentBlogLink;"Recent Blog"
+
+
 
 #################################################Footer Component####################################################
+# CMS Footer Component
+INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
+;;GofarFooterComponent;;GofarFooterComponent
+
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;linkName[lang=$lang]
+;;CountriesLink;Countries Link;/Countries;CountriesFooterLink;CountriesFooterLink;Countries
+
+#,PrivacyPolicyFooterLink
+#ReturnsPolicyFooterLink,Terms&ConditionsFooterLink
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);links(&linkRef);&nodeRef;title[lang=en]
+;AboutUsInfoNode;;About Us Info Node;;;AboutUsInfoNode;About Us Info Node;
+;CategriesNode;;Categries Node;;CountriesLink;CategriesNode;Categries Node
+;BlogNode;;Blog Node;;;BlogNode;;;Blog Node
+
+# Update CMS Footer Component with Nav Nodes
+UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];navigationNodes(&nodeRef)
+;;GofarFooterComponent;AboutUsInfoNode,CategriesNode,BlogNode
+
+####################### Footer #####################################
+
+
+
+
+
+

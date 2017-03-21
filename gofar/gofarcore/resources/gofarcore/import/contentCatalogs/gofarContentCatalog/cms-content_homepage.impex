@@ -34,6 +34,11 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;SocialNetworkSlot;;
 ;CategoriesSlot;;
 ;RecentBlogSlot;;
+;AboutUsSlot;;
+;HeaderLinks;;
+###Footer link Slots
+;CategoriesSlot;;
+
 
 
 ###  Define Content Slots  ###
@@ -46,6 +51,8 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[d
 ;;SocialNetworkSlot;Social Network Slot;true
 ;;CategoriesSlot;Categories Slot;true
 ;;RecentBlogSlot;Recent Blog Slot;true
+;;AboutUsSlot;About Us Slot;true
+;;CategoriesNavLinkSlot;Categories Nav Link Slot;true
 
 
 ###  Define ContentSlot For Template  ###
@@ -56,16 +63,27 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;SocialNetworkSlot-LandingPage2;SocialNetworkSlot;;SocialNetworkSlot;true
 ;;CategoriesSlot-LandingPage2;CategoriesSlot;;CategoriesSlot;true
 ;;RecentBlogSlot-LandingPage2;RecentBlogSlot;;RecentBlogSlot;true
-
-
-########################### Define Content slots for page######################
-INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;CategoriesLink-LandingPage2;CategoriesLink;;CategoriesNavLinkSlot;true
 
 
 ###  Create Content Page (HomePage)  ###
 # Site-wide Homepage
 INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
 ;;homepage;Homepage;LandingPage2Template;homepage
+
+
+###  Define Content Slots  ###
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[default=true]
+;;HomePageBannerSlot;Home Page Banner Slot;
+
+
+########################### Define Content slots for page######################
+INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
+;;HomePageBannerSlot-LandingPage2;HomePageBannerSlot;;HomePageBannerSlot;
+
+###############
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);children(uid,$contentCV)[mode=append];links(uid, $contentCV);&nodeRef
+;HomeNavigationNode;;;Home Navigation Node;
 
 #####Cms Link component##
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='newWindow']
