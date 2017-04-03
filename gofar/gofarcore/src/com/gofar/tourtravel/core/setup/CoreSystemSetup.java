@@ -19,15 +19,16 @@ import de.hybris.platform.core.initialization.SystemSetup.Type;
 import de.hybris.platform.core.initialization.SystemSetupContext;
 import de.hybris.platform.core.initialization.SystemSetupParameter;
 import de.hybris.platform.core.initialization.SystemSetupParameterMethod;
-import com.gofar.tourtravel.core.constants.GofarCoreConstants;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import com.gofar.tourtravel.core.constants.GofarCoreConstants;
+
 
 /**
  * This class provides hooks into the system's initialization and update processes.
- * 
+ *
  * @see "https://wiki.hybris.com/display/release4/Hooks+for+Initialization+and+Update+Process"
  */
 @SystemSetup(extension = GofarCoreConstants.EXTENSIONNAME)
@@ -38,7 +39,7 @@ public class CoreSystemSetup extends AbstractSystemSetup
 	/**
 	 * This method will be called by system creator during initialization and system update. Be sure that this method can
 	 * be called repeatedly.
-	 * 
+	 *
 	 * @param context
 	 *           the context provides the selected parameters and values
 	 */
@@ -51,6 +52,11 @@ public class CoreSystemSetup extends AbstractSystemSetup
 
 		importImpexFile(context, "/gofarcore/import/common/themes.impex");
 		importImpexFile(context, "/gofarcore/import/common/user-groups.impex");
+
+		/* impex entry for Wcms pages */
+		importImpexFile(context, "/gofarcore/import/contentCatalogs/cms-content_homepage.impex");
+		importImpexFile(context, "/gofarcore/import/contentCatalogs/cms-content_homepage_en.impex");
+
 	}
 
 	/**
@@ -69,7 +75,7 @@ public class CoreSystemSetup extends AbstractSystemSetup
 
 	/**
 	 * This method will be called during the system initialization.
-	 * 
+	 *
 	 * @param context
 	 *           the context provides the selected parameters and values
 	 */
@@ -104,9 +110,12 @@ public class CoreSystemSetup extends AbstractSystemSetup
 	}
 
 	protected void processCockpit(final SystemSetupContext context, final boolean importAccessRights,
-								final List<String> extensionNames, final String cockpit, final String... files) {
-		if (importAccessRights && extensionNames.contains(cockpit)) {
-			for (String file : files) {
+			final List<String> extensionNames, final String cockpit, final String... files)
+	{
+		if (importAccessRights && extensionNames.contains(cockpit))
+		{
+			for (final String file : files)
+			{
 				importImpexFile(context, file);
 			}
 		}

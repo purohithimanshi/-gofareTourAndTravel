@@ -14,6 +14,7 @@
 #
 $contentCatalog=gofarContentCatalog
 $contentCV=catalogVersion(CatalogVersion.catalog(Catalog.id[default=$contentCatalog]),CatalogVersion.version[default=Staged])[default=$contentCatalog:Staged]
+$lang=en
 
 # Import modulegen config properties into impex macros
 UPDATE GenericItem[processor=de.hybris.platform.commerceservices.impex.impl.ConfigPropertyImportProcessor];pk[unique=true]
@@ -26,72 +27,53 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 
 ###  Define Content SlotNames  ###
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
-;SearchBox;;;searchbox
-;HeaderLinksLeft;;;
-;HomepageBanner;;;
-;Footer;;FooterComponent;	
+;GofarFooterSection;;;
 ;FooterCopyRightSlot;;
-;SocialNetworkSlot;;
-;CategoriesSlot;;
-;RecentBlogSlot;;
 ;AboutUsSlot;;
-;HeaderLinks;;
-###Footer link Slots
-;CategoriesSlot;;
-
+;GofarRecentBlogSlot;;
 
 
 ###  Define Content Slots  ###
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[default=true];cmsComponents(uid,$contentCV)
-;;SearchBoxSlot;Search Box Slot
-;;HeaderLinksLeftSlot;Header Links Left Slot
-;;HomepageBannerSlot;Homepage Banner Slot
-;;FooterSlot;Footer Slot 
 ;;FooterCopyRightSlot;Footer Copy Right Slot;true;
-;;SocialNetworkSlot;Social Network Slot;true
-;;CategoriesSlot;Categories Slot;true
-;;RecentBlogSlot;Recent Blog Slot;true
 ;;AboutUsSlot;About Us Slot;true
-;;CategoriesNavLinkSlot;Categories Nav Link Slot;true
+;;GofarFooterSectionSlot;Gofar Footer Section Slot;true
+;;GofarRecentBlogSlot;Gofar Recent Blog Slot
 
 
 ###  Define ContentSlot For Template  ###
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
-;;SearchBox-LandingPage2;SearchBox;;SearchBoxSlot;true
-;;Footer-LandingPage2;Footer;;FooterSlot;true
 ;;FooterCopyRightSlot-LandingPage2;FooterCopyRightSlot;;FooterCopyRightSlot;true
-;;SocialNetworkSlot-LandingPage2;SocialNetworkSlot;;SocialNetworkSlot;true
-;;CategoriesSlot-LandingPage2;CategoriesSlot;;CategoriesSlot;true
-;;RecentBlogSlot-LandingPage2;RecentBlogSlot;;RecentBlogSlot;true
-;;CategoriesLink-LandingPage2;CategoriesLink;;CategoriesNavLinkSlot;true
-
-
-###  Create Content Page (HomePage)  ###
-# Site-wide Homepage
-INSERT_UPDATE ContentPage;$contentCV[unique=true];uid[unique=true];name;masterTemplate(uid,$contentCV);label;defaultPage[default='true'];approvalStatus(code)[default='approved'];homepage[default='true']
-;;homepage;Homepage;LandingPage2Template;homepage
-
-
-###  Define Content Slots  ###
-INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[default=true]
-;;HomePageBannerSlot;Home Page Banner Slot;
+;;GofarFooterSection-LandingPage2;GofarFooterSection;;GofarFooterSectionSlot;true
+;;GofarRecentBlogSection-LandingPage2;GofarRecentBlogSection;;GofarRecentBlogSlot;true
+;;AboutUsSlot-LandingPage2;AboutUsSlot;;AboutUsSlot;true
 
 
 ########################### Define Content slots for page######################
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
-;;HomePageBannerSlot-LandingPage2;HomePageBannerSlot;;HomePageBannerSlot;
 
-###############
-INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid, $contentCV);children(uid,$contentCV)[mode=append];links(uid, $contentCV);&nodeRef
-;HomeNavigationNode;;;Home Navigation Node;
+# CMS Footer Component
+INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
+;;GofarFooterComponent;6;FooterComponent
+;;GofarBolgFooterComponent;6;GofarBolgFooterComponent
 
-#####Cms Link component##
-INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;target(code)[default='newWindow']
-;;GofarAboutUSLink;Gofar AboutUS Link;"#";;;
-;;GofarCategoryLink;Gofar Category Link;"#";;;
-;;GofarRecentBlogLink;Gofar Recent Blog Link;"#";;;
+INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;linkName[lang=$lang]
+;;CitiesFooterLink;Cities Footer Link;/cities;CitiesFooterLink;CitiesFooterLink;Cities;Cities
+;;HotelsFooterLink;Hotels Footer Link;/hotels;HotelsFooterLink;HotelsFooterLink;Hotels;Hotels
+;;RecentBlogsPageLink;Recent Blogs Page Link;/recentBlog;RecentBlogsPageLink;RecentBlogsPageLink;Recent Blogs;Recent Blog
 
+INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid,$contentCV);links(&linkRef);&nodeRef;title[lang=$lang]
+;CategoriesNavNode;;Categories Nav Node;;CitiesFooterLink,HotelsFooterLink;CategoriesNavNode;Categiries
+;RecentBlogNavNode;;Recent Blog Nav Node;;RecentBlogsPageLink;RecentBlogNavNode;Recent Blog
 
+# Update CMS Footer Component with Nav Nodes
+UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];navigationNodes(&nodeRef)
+;;GofarFooterComponent;CategoriesNavNode
+;;GofarBolgFooterComponent;RecentBlogNavNode
+
+UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;cmsComponents(&componentRef)
+;;GofarFooterSectionSlot;Gofar Footer;FooterComponent
+;;GofarRecentBlogSlot;Gofar Recent Blog Slot;GofarBolgFooterComponent
 
 
 
