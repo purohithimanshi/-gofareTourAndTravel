@@ -152,6 +152,8 @@ public class InitialDataSystemSetup extends AbstractSystemSetup
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site.impex");
 		importImpexFile(pContext, "/gofarinitialdata/import/coredata/stores/storeName/site_en.impex");
 
+		importImpexFile(pContext,
+				"/gofarinitialdata/import/coredata/contentCatalogs/gofarContentCatalog/cms-content_homepage.impex");
 
 	}
 

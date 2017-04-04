@@ -54,8 +54,8 @@ public class CoreSystemSetup extends AbstractSystemSetup
 		importImpexFile(context, "/gofarcore/import/common/user-groups.impex");
 
 		/* impex entry for Wcms pages */
-		importImpexFile(context, "/gofarcore/import/contentCatalogs/cms-content_homepage.impex");
-		importImpexFile(context, "/gofarcore/import/contentCatalogs/cms-content_homepage_en.impex");
+		importImpexFile(context, "/gofarcore/import/contentCatalogs/gofarContentCatalog/cms-content_homepage.impex");
+		importImpexFile(context, "/gofarcore/import/contentCatalogs/gofarContentCatalog/cms-content_homepage_en.impex");
 
 	}
 
