@@ -27,18 +27,22 @@ INSERT_UPDATE PageTemplate;$contentCV[unique=true];uid[unique=true];name;fronten
 
 ###  Define Content SlotNames  ###
 INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=true][default='LandingPage2Template'];validComponentTypes(code);compTypeGroup(code)
+###FOOTER###
 ;GofarFooterSection;;;
 ;FooterCopyRightSlot;;
 ;AboutUsSlot;;
 ;GofarRecentBlogSlot;;
+;AddressInfoSlot;;
 
 
 ###  Define Content Slots  ###
 INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[default=true];cmsComponents(uid,$contentCV)
+###FOOTER###
 ;;FooterCopyRightSlot;Footer Copy Right Slot;true;
 ;;AboutUsSlot;About Us Slot;true
 ;;GofarFooterSectionSlot;Gofar Footer Section Slot;true
 ;;GofarRecentBlogSlot;Gofar Recent Blog Slot
+;;AddressInfoSlot;Address Info Slot
 
 
 ###  Define ContentSlot For Template  ###
@@ -47,6 +51,7 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;GofarFooterSection-LandingPage2;GofarFooterSection;;GofarFooterSectionSlot;true
 ;;GofarRecentBlogSection-LandingPage2;GofarRecentBlogSection;;GofarRecentBlogSlot;true
 ;;AboutUsSlot-LandingPage2;AboutUsSlot;;AboutUsSlot;true
+;;AddressInfoSection--LandingPage2;AddressInfoSection;;AddressInfoSlot;true
 
 
 ########################### Define Content slots for page######################
@@ -54,10 +59,12 @@ INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];positi
 
 # CMS Footer Component
 INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
+###FOOTER COMPONENT###
 ;;GofarFooterComponent;6;FooterComponent
 ;;GofarBolgFooterComponent;6;GofarBolgFooterComponent
 
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;linkName[lang=$lang]
+###FOOTER LINKS###
 ;;CitiesFooterLink;Cities Footer Link;/cities;CitiesFooterLink;CitiesFooterLink;Cities;Cities
 ;;HotelsFooterLink;Hotels Footer Link;/hotels;HotelsFooterLink;HotelsFooterLink;Hotels;Hotels
 ;;RecentBlogsPageLink;Recent Blogs Page Link;/recentBlog;RecentBlogsPageLink;RecentBlogsPageLink;Recent Blogs;Recent Blog
