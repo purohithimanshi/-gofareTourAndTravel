@@ -16,11 +16,12 @@
 			<div class="logo">
 				<a href="index-2.html"><img src="images/logo.png" alt=""></a>
 			</div>
-			<nav class="navigation awe-navigation" data-responsive="1200" style="height: auto;">
+			<nav class="navigation awe-navigation" data-responsive="1200"
+				style="height: auto;">
 				<ul class="menu-list">
-						<cms:pageSlot position="NavigationBarSection" var="feature">
-							<cms:component component="${feature}" />
-						</cms:pageSlot>
+					<cms:pageSlot position="NavigationBarSection" var="feature">
+						<cms:component component="${feature}" />
+					</cms:pageSlot>
 				</ul>
 			</nav>
 			<div class="search-box">
@@ -39,6 +40,15 @@
 		</div>
 	</div>
 </header>
+
+<div class="search-box">
+	<span class="searchtoggle"><i class="awe-icon awe-icon-search"></i></span>
+	<form class="form-search">
+		<div class="form-item">
+			<input type="text" value="Search &amp; hit enter">
+		</div>
+	</form>
+</div>
 <%-- <header id="header-page">
 	<div class="header-page__inner">
 		<div class="container">
