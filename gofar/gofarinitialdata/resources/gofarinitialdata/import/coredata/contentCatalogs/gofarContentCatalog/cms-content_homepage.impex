@@ -42,16 +42,51 @@ INSERT_UPDATE Media;$contentCV[unique=true];code[unique=true];mime;realfilename;
 ## navigation is in tree structure ##
 ## level 0 ##
 
-#####FOOTER Navigation###########
 INSERT_UPDATE CMSLinkComponent;$contentCV[unique=true];uid[unique=true];name;url;&linkRef;&componentRef;linkName[lang=$lang]
 ###FOOTER LINKS###
 ;;CitiesFooterLink;Cities Footer Link;/cities;CitiesFooterLink;CitiesFooterLink;Cities;Cities
 ;;HotelsFooterLink;Hotels Footer Link;/hotels;HotelsFooterLink;HotelsFooterLink;Hotels;Hotels
 ;;RecentBlogsPageLink;Recent Blogs Page Link;/recentBlog;RecentBlogsPageLink;RecentBlogsPageLink;Recent Blogs;Recent Blog
+###HEADER LINKS
+;;HomePageLink;Home Page Link;/;HomePageLink;HomePageLink;Home;Home
+;;DestinationLink;Destination Link;/;DestinationLink;DestinationLink;Destination;Destination
+;;TripLink;Trip Link;/;TripLink;TripLink;Trips;Trips
+;;HotelLink;Hotel Link;/;HotelLink;HotelLink;Hotel;Hotel
+;;FlightLink;Flight Link;/;FlightLink;FlightLink;Flight;Flight
+;;TrainLink;Train Link;/;TrainLink;TrainLink;Train;Train
+;;AttractionLink;Attraction Link;/;AttractionLink;AttractionLink;Attraction;Attraction
+;;PagesLink;Pages Link;/;PagesLink;PagesLink;Pages;Pages
+;;ContactLink;Contact Link;/;ContactLink;ContactLink;Contact;Contact
 
 INSERT_UPDATE CMSNavigationNode;uid[unique=true];$contentCV[unique=true];name;parent(uid,$contentCV);links(&linkRef);&nodeRef;title[lang=$lang]
 ;CategoriesNavNode;;Categories Nav Node;;CitiesFooterLink,HotelsFooterLink;CategoriesNavNode;Categiries
 ;RecentBlogNavNode;;Recent Blog Nav Node;;RecentBlogsPageLink;RecentBlogNavNode;Recent Blog
+
+###HOME PAGE NAVIGATIONS
+;HomePageNavNode;;Home Page Nav Node;;HomePageLink;Home;Home
+;DestinationNavNode;;Destination Nav Node;;DestinationLink;Destination;Destination
+;TripNavNode;;Trip Nav Node;;TripLink;Trips;Trips
+;HotelNavNode;;Hotel Nav Node;;HotelLink;Hotel;Hotel
+;FlightNavNode;;Flight Nav Node;;FlightLink;Flight;Flight
+;TrainNavNode;;Train Nav Node;;TrainLink;Train;Train
+;AttractionNavNode;;Attraction Nav Node;;AttractionLink;Attraction;Attraction
+;PagesNavNode;;Pages Nav Node;;PagesLink;Pages;Pages
+;ContactNavNode;;Contact Nav Node;;ContactLink;Contact;Contact
+
+INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];name;navigationNode(uid,$contentCV);link(uid, $contentCV);styleClass;dropDownLayout(code)[default=AUTO];&componentRef
+;;HomePageNavBarComponent;Home Page Nav Bar Component;HomePageNavNode;HomePageLink;;;HomePageNavBarComponent
+;;DestinationNavBarComponent;Destination Nav Bar  Component;DestinationNavNode;DestinationLink;;;DestinationNavBarComponent
+;;TripNavBarComponent;Trip Nav Bar Component;TripNavNode;TripLink;;;TripNavBarComponent
+;;HotelNavBarComponent;Hotel Nav Bar Component;HotelNavNode;HotelLink;;;HotelNavBarComponent
+;;FlightNavBarComponent;Flight Nav Bar Component;FlightNavNode;FlightLink;;;FlightNavBarComponent
+;;TrainNavBarComponent;Train Nav Bar Component;TrainNavNode;TrainLink;;;TrainNavBarComponent
+;;AttractionNavBarComponent;Attraction Nav Bar Component;AttractionNavNode;AttractionLink;;;AttractionNavBarComponent
+;;PagesNavBarComponent;Pages Nav Bar Component;PagesNavNode;PagesLink;;;PagesNavBarComponent
+;;ContactNavBarComponent;Contact Nav Bar Component;ContactNavNode;ContactLink;;;ContactNavBarComponent
+ 
+INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
+;;NavBarComponent;Nav Bar Collection Component;HomePageNavBarComponent,DestinationNavBarComponent,TripNavBarComponent,HotelNavBarComponent,FlightNavBarComponent,TrainNavBarComponent,AttractionNavBarComponent,PagesNavBarComponent,ContactNavBarComponent;NavBarComponent
+
 
 # CMS Footer Component
 INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
@@ -67,6 +102,8 @@ UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];navigationNodes(
 UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;cmsComponents(&componentRef)
 ;;GofarFooterSectionSlot;Gofar Footer;FooterComponent
 ;;GofarRecentBlogSlot;Gofar Recent Blog Slot;GofarBolgFooterComponent
+##Header Navigation component#
+;;NavigationBarSlot;Navigation Bar Slot;NavBarComponent
 
 
 

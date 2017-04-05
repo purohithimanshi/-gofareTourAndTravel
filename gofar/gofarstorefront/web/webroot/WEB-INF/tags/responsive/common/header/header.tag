@@ -16,9 +16,41 @@
 			<div class="logo">
 				<a href="index-2.html"><img src="images/logo.png" alt=""></a>
 			</div>
+			<nav class="navigation awe-navigation" data-responsive="1200" style="height: auto;">
+				<ul class="menu-list">
+						<cms:pageSlot position="NavigationBarSection" var="feature">
+							<cms:component component="${feature}" />
+						</cms:pageSlot>
+				</ul>
+			</nav>
+			<div class="search-box">
+				<span class="searchtoggle"><i
+					class="awe-icon awe-icon-search"></i></span>
+				<form class="form-search">
+					<div class="form-item">
+						<input type="text" value="Search &amp; hit enter">
+					</div>
+				</form>
+			</div>
+			<a class="toggle-menu-responsive" href="#"><div class="hamburger">
+					<span class="item item-1"></span> <span class="item item-2"></span>
+					<span class="item item-3"></span>
+				</div></a>
+		</div>
+	</div>
+</header>
+<%-- <header id="header-page">
+	<div class="header-page__inner">
+		<div class="container">
+			<div class="logo">
+				<a href="index-2.html"><img src="images/logo.png" alt=""></a>
+			</div>
 			<nav class="navigation awe-navigation" data-responsive="1200">
 				<ul class="menu-list">
-					<li class="menu-item-has-children current-menu-parent"><a
+				<cms:pageSlot position="NavigationBarSection" var="feature">
+						<cms:component component="${feature}" />
+					</cms:pageSlot>
+					<!-- <li class="menu-item-has-children current-menu-parent"><a
 						href="index-2.html">Home</a>
 						<ul class="sub-menu">
 							<li class="current-menu-item"><a href="index-2.html">Home
@@ -28,7 +60,7 @@
 							<li><a href="index-dark.html">Home 1 (Dark)</a></li>
 							<li><a href="index2-dark.html">Home 2 (Dark)</a></li>
 							<li><a href="index3-dark.html">Menu hamburger (Dark)</a></li>
-						</ul></li>
+						</ul></li> -->
 					<li class="menu-item-has-children"><a
 						href="destinations-list.html">Destinations</a>
 						<ul class="sub-menu">
@@ -157,48 +189,48 @@
 		</div>
 	</div>
 </header>
+ --%>
 
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-									
-								<%-- 	 Himanshi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%-- 	 Himanshi
 									<cms:pageSlot position="TopHeaderSlot" var="component"
 										element="div" class="container">
 										<cms:component component="${component}" />
