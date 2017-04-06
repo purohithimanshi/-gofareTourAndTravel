@@ -35,6 +35,7 @@ INSERT_UPDATE ContentSlotName;name[unique=true];template(uid,$contentCV)[unique=
 ;AddressInfoSlot;;
 #####HEADER###
 ;NavigationBarSlot;;
+;SearchBoxSlot;;
 
 
 ###  Define Content Slots  ###
@@ -47,6 +48,7 @@ INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];name;active[d
 ;;AddressInfoSlot;Address Info Slot
 #####HEADER####
 ;;NavigationBarSlot;Navigation Bar Slot
+;;SearchBoxSlot;Search Box Slot
 
 ###  Define ContentSlot For Template  ###
 INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];position[unique=true];pageTemplate(uid,$contentCV)[unique=true][default='LandingPage2Template'];contentSlot(uid,$contentCV)[unique=true];allowOverwrite
@@ -57,6 +59,7 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 ;;AddressInfoSection-LandingPage2;AddressInfoSection;;AddressInfoSlot;true
 #####HEADER####
 ;;NavigationBarSection-LandingPage2;NavigationBarSection;;NavigationBarSlot;true
+;;SearchBoxSection-LandingPage2;SearchBoxSection;;SearchBoxSlot;true
 
 ########################### Define Content slots for page######################
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]

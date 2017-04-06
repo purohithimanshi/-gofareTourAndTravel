@@ -87,6 +87,12 @@ INSERT_UPDATE NavigationBarComponent;$contentCV[unique=true];uid[unique=true];na
 INSERT_UPDATE NavigationBarCollectionComponent;$contentCV[unique=true];uid[unique=true];name;components(uid, $contentCV);&componentRef
 ;;NavBarComponent;Nav Bar Collection Component;HomePageNavBarComponent,DestinationNavBarComponent,TripNavBarComponent,HotelNavBarComponent,FlightNavBarComponent,TrainNavBarComponent,AttractionNavBarComponent,PagesNavBarComponent,ContactNavBarComponent;NavBarComponent
 
+###HOME PAGE SEARCH BOX COMPONENT###
+INSERT_UPDATE SearchBoxComponent;$contentCV[unique=true];uid[unique=true];name;&componentRef
+;;SearchBoxComponent;Search Box Component;SearchBoxComponent
+
+INSERT_UPDATE ContentSlot;$contentCV[unique=true];uid[unique=true];cmsComponents(&componentRef)
+;;SearchBoxSlot;SearchBoxComponent
 
 # CMS Footer Component
 INSERT_UPDATE FooterComponent;$contentCV[unique=true];uid[unique=true];wrapAfter;&componentRef
