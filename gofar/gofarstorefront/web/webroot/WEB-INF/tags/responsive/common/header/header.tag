@@ -27,7 +27,7 @@
 			<cms:pageSlot position="SearchBoxSection" var="feature">
 				<cms:component component="${feature}" />
 			</cms:pageSlot>
-			<!-- <div class="search-box">
+			<div class="search-box">
 				<span class="searchtoggle"><i
 					class="awe-icon awe-icon-search"></i></span>
 				<form class="form-search">
@@ -35,11 +35,11 @@
 						<input type="text" value="Search &amp; hit enter">
 					</div>
 				</form>
-			</div> -->
-		<!-- 	<a class="toggle-menu-responsive" href="#"><div class="hamburger">
+			</div>
+			<a class="toggle-menu-responsive" href="#"><div class="hamburger">
 					<span class="item item-1"></span> <span class="item item-2"></span>
 					<span class="item item-3"></span>
-				</div></a> -->
+				</div></a>
 		</div>
 	</div>
 </header>
