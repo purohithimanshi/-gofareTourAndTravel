@@ -101,7 +101,7 @@
 			<div id="slider-revolution">
 				<ul>
 					<li data-slotamount="7" data-masterspeed="500"
-						data-title="Slide title 1"><img src="images/bg/1.jpg"
+						data-title="Slide title 1"><img src="_ui/responsive/common/images/bg/1.jpg"
 						data-bgposition="left center" data-duration="14000"
 						data-bgpositionend="right center" alt="">
 						<div

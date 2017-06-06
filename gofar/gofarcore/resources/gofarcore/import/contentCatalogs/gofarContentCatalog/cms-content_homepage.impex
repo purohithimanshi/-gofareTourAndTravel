@@ -68,6 +68,11 @@ INSERT_UPDATE ContentSlotForTemplate;$contentCV[unique=true];uid[unique=true];po
 INSERT_UPDATE ContentSlotForPage;$contentCV[unique=true];uid[unique=true];position[unique=true];page(uid,$contentCV)[unique=true][default='homepage'];contentSlot(uid,$contentCV)[unique=true]
 ;;RotateBannerImageSlot;RotateBannerImageSection;;RotateBannerImageSlot
 
+##############################
+INSERT_UPDATE BannerComponent;$contentCV[unique=true];uid[unique=true];name;urlLink;&componentRef;content[lang=$lang]
+;;homePageBanner1;First Home Page Banner;homePageBanner1;
+
+
 
 
 
